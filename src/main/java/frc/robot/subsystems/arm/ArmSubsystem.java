@@ -19,10 +19,10 @@ public class ArmSubsystem extends FullSubsystem {
   @RequiredArgsConstructor
   public enum Goal {
     IDLE(() -> 0.0),
-    ZERO(() -> ArmConstants.zeroAngle),
-    NINETY(() -> ArmConstants.ninetyAngle),
-    ONEEIGHTY(() -> ArmConstants.oneeightyAngle),
-    TWOSEVENTY(() -> ArmConstants.twoseventyAngle);
+    ZERO(() -> ArmConstants.zeroAngleRad),
+    NINETY(() -> ArmConstants.ninetyAngleRad),
+    ONEEIGHTY(() -> ArmConstants.oneeightyAngleRad),
+    TWOSEVENTY(() -> ArmConstants.twoseventyAngleRad);
 
     private final DoubleSupplier angleRads;
 
@@ -81,7 +81,7 @@ public class ArmSubsystem extends FullSubsystem {
   }
   
   public Command oneeightyDegreesCommand() {
-    return startEnd(() -> setGoal(Goal.ONEEIGHTY), () -> setGoal(Goal.ONEEIGHTY));
+    return startEnd(() -> setGoal(Goal.ONEEIGHTY), () -> setGoal(Goal.IDLE));
   }
 
   public Command twoseventyDegreesCommand() {

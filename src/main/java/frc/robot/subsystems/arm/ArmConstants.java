@@ -10,8 +10,8 @@ public class ArmConstants {
   public static final double armkI = 0.0;
   public static final double armkD = 0.0;
 
-  public static final double zeroAngle = 0; // radians
-  public static final double ninetyAngle = Math.PI / 2; // radians
-  public static final double oneeightyAngle = Math.PI; // radians
-  public static final double twoseventyAngle = Math.PI * 3 / 2; // radians
+  public static final double zeroAngleRad = 0; // radians
+  public static final double ninetyAngleRad = Math.PI / 2; // radians
+  public static final double oneeightyAngleRad = Math.PI; // radians
+  public static final double twoseventyAngleRad = Math.PI * 3 / 2; // radians
 }
