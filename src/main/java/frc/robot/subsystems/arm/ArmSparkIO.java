@@ -83,4 +83,9 @@ public class ArmSparkIO implements ArmIO {
   public void closedLoop(double setpoint) {
     masterController.setSetpoint(setpoint, ControlType.kPosition);
   }
+
+  @Override
+  public void rezero() {
+    masterRelativeEncoder.setPosition(0.0);
+  }
 }

@@ -26,4 +26,6 @@ public interface ArmIO {
   public default void applyOutputs(ArmIOOutputs outputs) {}
 
   public default void closedLoop(double setpoint) {}
+
+  public default void rezero() {}
 }

@@ -72,6 +72,11 @@ public class ArmSubsystem extends FullSubsystem {
     outputs.mode = ArmIOOutputMode.IDLE;
   }
 
+  private void rezero() {
+    io.rezero();
+    setGoal(Goal.IDLE);
+  }
+
   public Command zeroDegreesCommand() {
     return startEnd(() -> setGoal(Goal.ZERO), () -> setGoal(Goal.IDLE));
   }
@@ -86,6 +91,10 @@ public class ArmSubsystem extends FullSubsystem {
 
   public Command twoseventyDegreesCommand() {
     return startEnd(() -> setGoal(Goal.TWOSEVENTY), () -> setGoal(Goal.IDLE));
+  }
+
+  public Command rezeroCommand() {
+    return startEnd(() -> rezero(), (null));
   }
 
   public Command stopCommand() {

@@ -57,6 +57,7 @@ public class RobotContainer {
     m_driverController.y().whileTrue(armSubsystem.ninetyDegreesCommand());
     m_driverController.x().whileTrue(armSubsystem.oneeightyDegreesCommand());
     m_driverController.a().whileTrue(armSubsystem.twoseventyDegreesCommand());
+    m_driverController.rightBumper().whileTrue(armSubsystem.rezeroCommand());
   }
 
   /**
