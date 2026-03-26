@@ -19,6 +19,8 @@ public interface ArmIO {
   public static class ArmIOOutputs {
     public ArmIOOutputMode mode = ArmIOOutputMode.IDLE;
     public double voltage = 0.0;
+    public double angleDeg = 0.0;
+
   }
 
   public default void updateInputs(ArmIOInputs inputs) {}

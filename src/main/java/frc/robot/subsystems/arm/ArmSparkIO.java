@@ -36,8 +36,24 @@ public class ArmSparkIO implements ArmIO {
         .inverted(false)
         .smartCurrentLimit(currentLimit);
     sparkMaxConfig
+        .encoder
+        .positionConversionFactor(positionConversionFactor)
+        .velocityConversionFactor(velocityConversionFactor)
+        .uvwMeasurementPeriod(10)
+        .uvwAverageDepth(2);
+    sparkMaxConfig
         .closedLoop
+        .positionWrappingEnabled(true)
         .pid(armkP, armkI, armkD);
+    sparkMaxConfig
+        .signals
+        .primaryEncoderPositionAlwaysOn(true)
+        .primaryEncoderPositionPeriodMs(20)
+        .primaryEncoderVelocityAlwaysOn(true)
+        .primaryEncoderVelocityPeriodMs(20)
+        .appliedOutputPeriodMs(20)
+        .busVoltagePeriodMs(20)
+        .outputCurrentPeriodMs(20);
 
     tryUntilOk(
       masterNEO,

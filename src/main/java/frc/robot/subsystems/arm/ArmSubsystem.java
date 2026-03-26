@@ -49,7 +49,7 @@ public class ArmSubsystem extends FullSubsystem {
     if (currentGoal == Goal.IDLE) {
       stop();
     } else {
-      runVoltage(currentGoal.getGoal());
+      runAngular(currentGoal.getGoal());
     }
   }
 
@@ -63,9 +63,9 @@ public class ArmSubsystem extends FullSubsystem {
     currentGoal = desiredGoal;
   }
 
-  private void runVoltage(double voltage) {
+  private void runAngular(double angle) {
     outputs.mode = ArmIOOutputMode.CLOSED_LOOP;
-    outputs.voltage = voltage;
+    outputs.angleDeg = angle;
   }
 
   private void stop() {
