@@ -94,7 +94,7 @@ public class ArmSubsystem extends FullSubsystem {
   }
 
   public Command rezeroCommand() {
-    return startEnd(() -> rezero(), (null));
+    return runOnce(() -> rezero());
   }
 
   public Command stopCommand() {
